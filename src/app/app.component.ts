@@ -24,11 +24,7 @@ export class AppComponent {
         Validators.minLength(3),
         Validators.required])]
     });
-
-    this.load();
-   
   }
-
 
   clear(){
     this.form.reset()
@@ -42,9 +38,7 @@ export class AppComponent {
     this.save()
     this.clear()
   }
-  alteraTexto(){
-    this.title = 'testando'
-  }
+ 
   save(){
     const data = JSON.stringify(this.formFeedBack);
     localStorage.setItem('feedback',data);
