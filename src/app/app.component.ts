@@ -52,8 +52,6 @@ export class AppComponent {
 
   load(){
     const data = localStorage.getItem('feedback');
-    console.log(data)
     this.formFeedBack = JSON.parse(data)
-    console.log(this.form)
   }
 }
