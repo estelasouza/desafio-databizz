@@ -1,0 +1,38 @@
+ <div class="row">
+  <div class= "col" >
+
+    <h1>{{ title }}</h1>
+
+  <form [formGroup]="form" class ="form-group" >
+    <fieldset>
+      <p class="input-area"> Nome</p>
+      <label for="" ></label>
+      <input type="text" placeholder="Nome" formControlName="name" class="name"/>
+      <small *ngIf="form.controls.name.invalid && !form.controls.name.pristine"> Esse campo deve conter ao menos 3 caracteres
+      </small>
+      
+      <p class="input-area"> Mensagem </p>
+      <label for="" ></label>
+      <textarea class="form-control message" type="text" placeholder="texto" formControlName="text" ></textarea>
+
+      <small *ngIf="form.controls.text.invalid && !form.controls.text.pristine"> Esse campo deve conter ao menos 3 caracteres
+      </small>
+      <button [disabled]="form.invalid" (click)=add()>Adicionar </button>
+    </fieldset>
+  </form>
+  </div>
+  <div class= "col" >
+      <div class="col"></div>
+      <div class="col color-bg"></div>
+      <div class="col"></div>
+  </div>
+<div>
+<h2>Últimos comentários</h2>
+
+<div *ngFor="let resp of formFeedBack">
+
+  <p class="style-text">{{resp.text}}</p>
+  <p class="style-name">{{ resp.name }}</p>
+
+</div>
+  <p>Seletiva de estágio mecls</p>
